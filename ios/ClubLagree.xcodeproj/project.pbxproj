@@ -417,7 +417,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.clublagree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clublagree.io;
 				PRODUCT_NAME = ClubLagree;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ClubLagree-Bridging-Header.h";
@@ -452,7 +452,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.clublagree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clublagree.io;
 				PRODUCT_NAME = ClubLagree;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ClubLagree-Bridging-Header.h";

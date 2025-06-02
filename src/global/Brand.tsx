@@ -98,4 +98,6 @@ export default {
   BUTTON_SMALL_RADIUS: 3,
   BUTTON_LARGE_RADIUS: 3,
   TRANSFORM_HEADER_TEXT: 'uppercase' as const,
+  BUTTON_LARGE_FONT: 'fontPrimaryBoldRoboto',
+  BUTTON_SMALL_FONT: 'fontPrimaryBoldRoboto',
 } satisfies { [K in keyof TemplateDefaults]?: TemplateDefaults[K] }
