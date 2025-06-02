@@ -1,4 +1,4 @@
-package com.clublagree
+package com.clublagree.io
 
 import android.app.Application
 import com.facebook.react.PackageList

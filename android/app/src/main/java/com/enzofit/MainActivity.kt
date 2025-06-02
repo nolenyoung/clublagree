@@ -1,4 +1,4 @@
-package com.clublagree
+package com.clublagree.io
 
 import android.content.Intent
 import android.content.res.Configuration

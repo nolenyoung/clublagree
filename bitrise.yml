@@ -11,7 +11,7 @@ workflows:
           inputs:
             - service_account_json_key_path: $BITRISEIO_GOOGLE_SERVICE_ACCOUNT_JSON_URL
             - app_path: $BITRISE_SOURCE_DIR/$ANDROID_BUNDLE_PATH
-            - package_name: com.clublagree
+            - package_name: com.clublagree.io
     after_run: []
     before_run: []
   Deploy-All:
