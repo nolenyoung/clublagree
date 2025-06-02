@@ -18,9 +18,9 @@ function getStyles(themeStyle: ThemeStyle) {
   return {
     content: { ...themeStyle.flexViewCentered, backgroundColor: themeStyle.brandPrimary },
     logo: {
-      height: themeStyle.scale(141),
+      height: themeStyle.scale(192),
       resizeMode: 'contain' as const,
-      width: themeStyle.scale(168),
+      width: themeStyle.scale(229),
     },
   }
 }

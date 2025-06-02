@@ -34,7 +34,13 @@ export default function Auth(props: RootNavigatorScreenProps<'Auth'>) {
           <Image source={media.logo} style={styles.image} />
           <View style={styles.buttonRow}>
             <Button onPress={() => navigate('Login')} style={styles.logInButton} text="Log In" />
-            <Button onPress={() => navigate('Signup')} style={styles.signUpButton} text="Sign Up" />
+            <Button
+              onPress={() => navigate('Signup')}
+              style={styles.signUpButton}
+              textColor="black"
+              text="Sign Up"
+              color="white"
+            />
           </View>
         </View>
       </View>
@@ -51,10 +57,10 @@ function getStyles(themeStyle: ThemeStyle) {
     },
     menuIcon: { color: themeStyle.textWhite, fontSize: themeStyle.scale(18) },
     image: {
-      height: themeStyle.scale(72),
-      marginBottom: themeStyle.scale(69),
+      height: themeStyle.scale(100),
+      marginBottom: themeStyle.scale(49),
       resizeMode: 'contain' as 'contain',
-      width: themeStyle.scale(72),
+      width: themeStyle.scale(114),
     },
     buttonRow: { ...themeStyle.rowAligned, marginBottom: themeStyle.scale(75) },
     signUpButton: { marginLeft: themeStyle.scale(20), width: '40%' as const },

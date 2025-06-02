@@ -14,12 +14,13 @@ const colorTertiary = '#000000'
 const rewardsLevelName = 'Level'
 
 const fonts = {
-  fontPrimaryBlack: 'Montserrat-Black',
+  fontPrimaryBlack: 'Roboto-Black',
   fontPrimaryBold: 'Montserrat-Bold',
-  fontPrimaryItalic: 'Montserrat-Italic',
-  fontPrimaryLight: 'Montserrat-Light',
-  fontPrimaryMedium: 'Montserrat-Medium',
-  fontPrimaryRegular: 'Montserrat-Regular',
+  fontPrimaryItalic: 'Roboto-Italic',
+  fontPrimaryLight: 'Roboto-Light',
+  fontPrimaryMedium: 'Roboto-Medium',
+  fontPrimaryRegular: 'Roboto-Regular',
+  fontPrimaryBoldRoboto: 'Roboto-Bold',
 } as const
 
 const brandFonts = {
@@ -27,7 +28,7 @@ const brandFonts = {
   fontHomeWelcome: 'fontPrimaryBold',
   fontItemTitle: 'fontPrimaryBold',
   fontModalTitle: 'fontPrimaryBold',
-  fontScreenTitle: 'fontPrimaryLight',
+  fontScreenTitle: 'fontPrimaryBold',
   fontSectionTitle: 'fontPrimaryBold',
 } as const
 
@@ -61,15 +62,15 @@ export function getBrandStylingOverrides(
   const { scale } = stylingParams
   templateStyles.homeScreen.logo = {
     ...templateStyles.homeScreen.logo,
-    height: scale(49),
-    width: scale(49),
+    height: scale(41),
+    width: scale(47),
   }
   templateStyles.loginScreen.logo = {
     ...templateStyles.loginScreen.logo,
-    height: scale(79),
+    height: scale(100),
     marginBottom: scale(78),
-    marginTop: scale(64),
-    width: scale(79),
+    marginTop: scale(84),
+    width: scale(114),
   }
   return templateStyles
 }
@@ -78,7 +79,23 @@ export default {
   ...templateDefaults,
   IMAGES_LOGO_HOME: media.logo,
   IMAGES_LOGO_LOGIN: media.logo,
-  UI_CLIENT_ID_HOME: true,
+  IMAGES_HOME_HEADER_BACKGROUND: media.headerHomeBackground,
+  UI_CLIENT_ID_HOME: false,
   UI_PACKAGE_CLASSES: true,
   UI_PROFILE_PHOTO_UPLOAD: true,
+  COLOR_BUTTON_ALT: 'white',
+  BUTTON_TEXT_COLOR_ALT: 'black',
+  COLOR_OVERRIDES: {
+    normal: {
+      cancelButtonColor: '#777777',
+    },
+    dark: {
+      cancelButtonColor: '#777777',
+    },
+  },
+  COLOR_BUTTON_CANCEL: 'cancelButtonColor',
+  COLOR_BUTTON_CALENDAR: 'lightGray',
+  BUTTON_SMALL_RADIUS: 3,
+  BUTTON_LARGE_RADIUS: 3,
+  TRANSFORM_HEADER_TEXT: 'uppercase' as const,
 } satisfies { [K in keyof TemplateDefaults]?: TemplateDefaults[K] }

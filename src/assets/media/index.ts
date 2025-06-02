@@ -15,4 +15,5 @@ export default {
   iconTrophy: require('./iconTrophy').default,
   logo: require('./logo.png'),
   logoText: require('./logoText.png'),
+  headerHomeBackground: require('./headerHomeBackground.jpg'),
 }

@@ -73,6 +73,8 @@ export default function Menu(props: DrawerContentComponentProps): React.ReactNod
                 onPress={() => navigation.navigate('Signup')}
                 style={styles.signUpButton}
                 text="Sign Up"
+                textColor='black'
+                color="white"
               />
             </View>
           </View>
@@ -85,15 +87,8 @@ export default function Menu(props: DrawerContentComponentProps): React.ReactNod
           </TouchableOpacity>
         )}
         <TouchableOpacity onPress={() => navigation.navigate(Brand.UI_SCHEDULE_SCREEN)}>
-          <Text allowFontScaling={false} style={styles.primaryLinkText}>
+          <Text allowFontScaling={false} style={[styles.primaryLinkText, !loggedIn && { marginBottom: 0 }]}>
             Schedule
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Workshops')}>
-          <Text
-            allowFontScaling={false}
-            style={[styles.primaryLinkText, !loggedIn && { marginBottom: 0 }]}>
-            Workshops
           </Text>
         </TouchableOpacity>
         {/* {loggedIn && (
@@ -217,11 +212,11 @@ function getStyles(themeStyle: ThemeStyle) {
       marginVertical: themeStyle.scale(24),
     },
     primaryLinkText: {
-      ...themeStyle.getTextStyle({ color: 'textWhite', font: 'fontPrimaryRegular', size: 22 }),
+      ...themeStyle.getTextStyle({ color: 'textWhite', font: 'fontPrimaryBold', size: 22 }),
       marginBottom: themeStyle.scale(20),
     },
     secondaryLinkText: {
-      ...themeStyle.getTextStyle({ color: 'textWhite', font: 'fontPrimaryRegular', size: 16 }),
+      ...themeStyle.getTextStyle({ color: 'textWhite', font: 'fontPrimaryBoldRoboto', size: 16 }),
       marginBottom: themeStyle.scale(16),
     },
     bottomButtons: { flex: 1, justifyContent: 'flex-end' as 'flex-end' },
