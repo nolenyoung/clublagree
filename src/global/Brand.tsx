@@ -8,9 +8,9 @@ const classTitle = 'Class'
 const classTitlePlural = 'Classes'
 const coachTitle = 'Coach'
 const coachTitlePlural = 'Coaches'
-const colorPrimary = '#662E91'
-const colorSecondary = '#1E1926'
-const colorTertiary = '#1E1926'
+const colorPrimary = '#000000'
+const colorSecondary = '#000000'
+const colorTertiary = '#000000'
 const rewardsLevelName = 'Level'
 
 const fonts = {

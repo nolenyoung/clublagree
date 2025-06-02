@@ -380,6 +380,7 @@
 					"FB_SONARKIT_ENABLED=1",
 				);
 				INFOPLIST_FILE = ClubLagree/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Club Lagree";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,6 +415,7 @@
 				CURRENT_PROJECT_VERSION = 63;
 				DEVELOPMENT_TEAM = QU559TLH5Z;
 				INFOPLIST_FILE = ClubLagree/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Club Lagree";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

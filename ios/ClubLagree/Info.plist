@@ -38,12 +38,12 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<false />
+		<false/>
 		<key>NSAllowsLocalNetworking</key>
-		<true />
+		<true/>
 	</dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
-	<false />
+	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>facebook-stories</string>
@@ -58,7 +58,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>12</string>
 	<key>LSRequiresIPhoneOS</key>
-	<true />
+	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
@@ -75,7 +75,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false />
+	<false/>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like access to your calendar to add upcoming bookings and remove cancelled bookings.</string>
 	<key>NSCalendarsUsageDescription</key>
