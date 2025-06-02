@@ -1,0 +1,24 @@
+diff --git a/src/createPersistoid.js b/src/createPersistoid.js
+index 349b7b819597b845823b72ace2784c98f4c38589..0fd489943c3669cd889875701b4d88ce1d82cec6 100644
+--- a/src/createPersistoid.js
++++ b/src/createPersistoid.js
+@@ -55,9 +55,16 @@ export default function createPersistoid(config: PersistConfig): Persistoid {
+       }
+     })
+ 
+-    // start the time iterator if not running (read: throttle)
+-    if (timeIterator === null) {
+-      timeIterator = setInterval(processNextKey, throttle)
++    // if no throttle, there's no point in using
++    // an interval, this allows background execution in RN.
++    if (!throttle) {
++      while (keysToProcess.length) {
++        processNextKey()
++      }
++    } else {
++      if (timeIterator === null) {
++        timeIterator = setInterval(processNextKey, throttle)
++      }
+     }
+ 
+     lastState = state

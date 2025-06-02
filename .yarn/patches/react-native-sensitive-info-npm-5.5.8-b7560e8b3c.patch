@@ -1,0 +1,42 @@
+diff --git a/RNSensitiveInfo.js b/RNSensitiveInfo.js
+index b3e164c6bb00e1bb885e796f6f402909ecfb6071..8c78de5defe08e4ebd211e6cff863bb1c5b814a5 100644
+--- a/RNSensitiveInfo.js
++++ b/RNSensitiveInfo.js
+@@ -2,8 +2,7 @@ import {NativeModules} from 'react-native';
+ 
+ const RNSensitiveInfo = NativeModules.RNSensitiveInfo;
+ 
+-module.exports = {
+-  ...RNSensitiveInfo,
++module.exports = Object.create(RNSensitiveInfo, {
+   setInvalidatedByBiometricEnrollment(invalidatedByBiometricEnrollment) {
+     if (RNSensitiveInfo.setInvalidatedByBiometricEnrollment == null) {
+       return;
+@@ -20,4 +19,4 @@ module.exports = {
+ 
+     return RNSensitiveInfo.cancelFingerprintAuth();
+   },
+-};
++});
+diff --git a/android/src/main/java/br/com/classapp/RNSensitiveInfo/RNSensitiveInfoModule.java b/android/src/main/java/br/com/classapp/RNSensitiveInfo/RNSensitiveInfoModule.java
+index c9ee9c2b5744978fa52d9cf7da288d863c0ece1f..7d4991b8dce8c19177107d2668a8178cdee39bb8 100644
+--- a/android/src/main/java/br/com/classapp/RNSensitiveInfo/RNSensitiveInfoModule.java
++++ b/android/src/main/java/br/com/classapp/RNSensitiveInfo/RNSensitiveInfoModule.java
+@@ -345,7 +345,7 @@ public class RNSensitiveInfoModule extends ReactContextBaseJavaModule {
+                     KeyInfo info = (KeyInfo) factory.getKeySpec(secretKey, KeyInfo.class);
+ 
+                     if (info.isUserAuthenticationRequired() &&
+-                            info.getUserAuthenticationValidityDurationSeconds() == -1) {
++                            info.getUserAuthenticationValidityDurationSeconds() <= 0) {
+ 
+                         if (showModal) {
+                             class PutExtraWithAESCallback extends BiometricPrompt.AuthenticationCallback {
+@@ -459,7 +459,7 @@ public class RNSensitiveInfoModule extends ReactContextBaseJavaModule {
+                     KeyInfo info = (KeyInfo) factory.getKeySpec(secretKey, KeyInfo.class);
+ 
+                     if (info.isUserAuthenticationRequired() &&
+-                            info.getUserAuthenticationValidityDurationSeconds() == -1) {
++                            info.getUserAuthenticationValidityDurationSeconds() <= 0) {
+ 
+                         if (showModal) {
+                             class DecryptWithAesCallback extends BiometricPrompt.AuthenticationCallback {

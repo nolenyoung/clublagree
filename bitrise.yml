@@ -1,0 +1,97 @@
+format_version: '8'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: react-native
+workflows:
+  Android:
+    steps:
+      - yarn@0:
+          inputs:
+            - command: android-bundle
+      - google-play-deploy@3:
+          inputs:
+            - service_account_json_key_path: $BITRISEIO_GOOGLE_SERVICE_ACCOUNT_JSON_URL
+            - app_path: $BITRISE_SOURCE_DIR/$ANDROID_BUNDLE_PATH
+            - package_name: com.clublagree
+    after_run: []
+    before_run: []
+  Deploy-All:
+    after_run:
+      - Setup
+      - Android
+      - iOS
+  Deploy-Android-Only:
+    after_run:
+      - Setup
+      - Android
+  Deploy-iOS-Only:
+    after_run:
+      - Setup
+      - iOS
+  iOS:
+    steps:
+      - cocoapods-install@2:
+          inputs:
+            - verbose: 'false'
+            - is_update_cocoapods: 'true'
+      - xcode-archive@5:
+          inputs:
+            - output_tool: xcodebuild
+            - verbose_log: 'no'
+            - export_method: app-store
+            - distribution_method: app-store
+            - automatic_code_signing: api-key
+            - team_id: QU559TLH5Z
+      - deploy-to-itunesconnect-application-loader@1: {}
+    before_run: []
+  Setup:
+    steps:
+      - activate-ssh-key@4:
+          run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+      - git-clone@8: {}
+      - file-downloader@1:
+          inputs:
+            - destination: $BITRISE_SOURCE_DIR/config.js
+            - source: $BITRISEIO_APP_CONFIG_URL
+      - file-downloader@1:
+          inputs:
+            - destination: $BITRISE_SOURCE_DIR/$KEYSTORE_PATH
+            - source: $BITRISEIO_ANDROID_KEYSTORE_URL
+      - yarn@0:
+          inputs:
+            - command: install
+      - yarn@0:
+          inputs:
+            - command: increment-build
+app:
+  envs:
+    - opts:
+        is_expand: false
+      PROJECT_LOCATION: android
+    - opts:
+        is_expand: false
+      MODULE: app
+    - opts:
+        is_expand: false
+      VARIANT: release
+    - opts:
+        is_expand: false
+      BITRISE_PROJECT_PATH: ios/ClubLagree.xcworkspace
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: ClubLagree
+    - opts:
+        is_expand: false
+      BITRISE_EXPORT_METHOD: app-store
+    - opts:
+        is_expand: false
+      KEYSTORE_PATH: android/app/clublagree.keystore
+    - opts:
+        is_expand: false
+      ANDROID_BUNDLE_PATH: android/app/build/outputs/bundle/release/app-release.aab
+trigger_map:
+  - push_branch: main
+    workflow: Deploy-All
+meta:
+  bitrise.io:
+    stack: osx-xcode-16.1.x
+    machine_type_id: g2-m1.4core

@@ -1,0 +1,12 @@
+diff --git a/android/src/main/java/com/swmansion/reanimated/keyboard/WindowsInsetsManager.java b/android/src/main/java/com/swmansion/reanimated/keyboard/WindowsInsetsManager.java
+index 5660944825836f4f79d82876773c58ca3a4a1368..a0cbe7be5472b872a4afcb256dcc0dcdc2314f55 100644
+--- a/android/src/main/java/com/swmansion/reanimated/keyboard/WindowsInsetsManager.java
++++ b/android/src/main/java/com/swmansion/reanimated/keyboard/WindowsInsetsManager.java
+@@ -56,7 +56,6 @@ public class WindowsInsetsManager {
+ 
+   public void stopObservingChanges() {
+     updateWindowDecor(!mIsStatusBarTranslucent && !mIsNavigationBarTranslucent);
+-    updateInsets(0, 0);
+ 
+     Activity currentActivity = getCurrentActivity();
+     if (currentActivity == null) {

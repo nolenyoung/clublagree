@@ -1,0 +1,19 @@
+{
+  "name": "react-native-keep-awake",
+  "version": "1.0.0",
+  "description": "Module that allows your app to prevent the phone from going to sleep",
+  "main": "src/index",
+  "codegenConfig": {
+    "name": "RNKeepAwakeSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "author": "Craig Martin",
+  "license": "MIT",
+  "homepage": "#readme",
+  "create-react-native-library": {
+    "type": "module-mixed",
+    "languages": "kotlin-objc",
+    "version": "0.41.2"
+  }
+}

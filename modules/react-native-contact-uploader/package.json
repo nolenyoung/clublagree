@@ -1,0 +1,19 @@
+{
+  "name": "react-native-contact-uploader",
+  "version": "1.0.0",
+  "description": "Fetch user contacts and upload them to a server",
+  "main": "src/index",
+  "codegenConfig": {
+    "name": "RNContactUploaderSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "author": "Craig Martin",
+  "license": "MIT",
+  "homepage": "#readme",
+  "create-react-native-library": {
+    "type": "module-mixed",
+    "languages": "kotlin-objc",
+    "version": "0.41.2"
+  }
+}

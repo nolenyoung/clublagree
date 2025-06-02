@@ -1,0 +1,18 @@
+export default {
+  backgroundAuth: require('./backgroundAuth.png'),
+  backgroundAuthVideo: require('./backgroundAuthVideo.mp4'),
+  iconAccount: require('./iconAccount').default,
+  iconBanner: require('./iconBanner').default,
+  iconCalendar: require('./iconCalendar').default,
+  iconCheckCircle: require('./iconCheckCircle').default,
+  iconClock: require('./iconClock').default,
+  iconFriends: require('./iconFriends').default,
+  iconHome: require('./iconHome').default,
+  iconPlay: require('./iconPlay').default,
+  iconRewards: require('./iconRewards').default,
+  iconRibbon: require('./iconRibbon').default,
+  iconShoppingCart: require('./iconShoppingCart').default,
+  iconTrophy: require('./iconTrophy').default,
+  logo: require('./logo.png'),
+  logoText: require('./logoText.png'),
+}

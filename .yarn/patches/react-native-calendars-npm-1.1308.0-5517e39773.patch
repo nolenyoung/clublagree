@@ -1,0 +1,20 @@
+diff --git a/src/calendar-list/item.js b/src/calendar-list/item.js
+index 0e5be763fcc2bd3094bd5b9a80fcb9e27edab545..690ce41c17403e753345e658096c23cf34e5d900 100644
+--- a/src/calendar-list/item.js
++++ b/src/calendar-list/item.js
+@@ -1,5 +1,5 @@
+ import React, { useRef, useMemo, useCallback } from 'react';
+-import { Text } from 'react-native';
++import { ActivityIndicator, Text } from 'react-native';
+ import { toMarkingFormat } from '../interface';
+ import { extractCalendarProps } from '../componentUpdater';
+ import styleConstructor from './style';
+@@ -52,7 +52,7 @@ const CalendarListItem = React.memo((props) => {
+         }
+     }, [onPressArrowRight, scrollToMonth]);
+     if (!visible) {
+-        return (<Text style={textStyle}>{dateString}</Text>);
++        return (<ActivityIndicator style={textStyle} size="large" />);
+     }
+     return (<Calendar hideArrows={true} hideExtraDays={true} {...calendarProps} current={dateString} style={calendarStyle} headerStyle={horizontal ? headerStyle : undefined} disableMonthChange onPressArrowLeft={horizontal ? _onPressArrowLeft : onPressArrowLeft} onPressArrowRight={horizontal ? _onPressArrowRight : onPressArrowRight}/>);
+ });

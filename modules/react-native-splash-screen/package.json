@@ -1,0 +1,19 @@
+{
+  "name": "react-native-splash-screen",
+  "version": "1.0.0",
+  "description": "Module that will dismiss the native splash screen once your app has loaded",
+  "main": "src/index",
+  "codegenConfig": {
+    "name": "RNSplashScreenSpec",
+    "type": "modules",
+    "jsSrcsDir": "src"
+  },
+  "author": "Craig Martin",
+  "license": "MIT",
+  "homepage": "#readme",
+  "create-react-native-library": {
+    "type": "module-mixed",
+    "languages": "kotlin-objc",
+    "version": "0.41.2"
+  }
+}

@@ -1,0 +1,20 @@
+<resources>
+    <style name="AppTheme" parent="Theme.ReactNative.AppCompat.Light.NoActionBar.FullScreen">
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+    <style name="FullScreenDialogStyle" parent="android:Theme">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="FullScreenDialogAnimatedFade" parent="android:Theme">
+        <item name="android:overScrollMode">never</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="LaunchTheme" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenBackground">@color/colorPrimary</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+</resources>
