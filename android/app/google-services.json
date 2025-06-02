@@ -1,36 +1,27 @@
 {
   "project_info": {
-    "project_number": "528756672497",
-    "project_id": "clublagree-d76f6",
-    "storage_bucket": "clublagree-d76f6.appspot.com"
+    "project_number": "708711689266",
+    "firebase_url": "https://club-lagree.firebaseio.com",
+    "project_id": "club-lagree",
+    "storage_bucket": "club-lagree.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:528756672497:android:61339c700b1e235379e650",
+        "mobilesdk_app_id": "1:708711689266:android:362b8b4f8ae19b73aaa02b",
         "android_client_info": {
           "package_name": "com.clublagree"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "528756672497-r2rhnim8g0eaharggp6vpkeude9gstla.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBZQke_thjVmJO_LSVr98mGvz3uU8bWsqM"
+          "current_key": "AIzaSyCHKrOWXoAzMKLkClRHsbHK41RbJKXzlcc"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "528756672497-r2rhnim8g0eaharggp6vpkeude9gstla.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
